@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/topLayout"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true">
+
+    <com.google.android.gms.samples.vision.face.facetracker.ui.camera.CameraSourcePreview
+        android:id="@+id/preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.gms.samples.vision.face.facetracker.ui.camera.GraphicOverlay
+            android:id="@+id/faceOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.google.android.gms.samples.vision.face.facetracker.ui.camera.CameraSourcePreview>
+
+    <ImageView
+        android:id="@+id/captureImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/quickcircle_camera_shutter_normal"
+        />
+
+    <ImageView
+        android:id="@+id/gallery"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/camera_icon_mode_basic"
+        />
+
+    <ImageView
+        android:id="@+id/backpress"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:src="@drawable/ic_sysbar_back_dark_normal"
+        />
+
+    <ImageView
+        android:id="@+id/switchCamera"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:paddingTop="10dp"
+        android:paddingRight="15dp"
+        android:src="@drawable/ic_switch_camera_white_24dp"
+        android:layout_alignBottom="@+id/faceCountLayout" />
+
+    <ImageView
+        android:id="@+id/groupSuggestion"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/btn_dualview_wide_range_front"
+        android:layout_marginBottom="100dp"
+        android:layout_above="@+id/auto"
+        android:layout_alignEnd="@+id/switchCamera" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/selected_mood"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:background="@drawable/border"/>
+
+        <include layout="@layout/select_mood" />
+
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/simpleSpinner"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_alignParentLeft="true"
+        android:prompt="@string/mood"
+        android:spinnerMode="dialog"
+        android:visibility="invisible"
+        android:paddingTop="10dp" />
+
+    <ImageView
+        android:id="@+id/auto"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:visibility="visible"
+        android:src="@drawable/btn_manual_panel_button_auto"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/captureImage"
+        android:layout_marginBottom="11dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:gravity="center"
+        android:id="@+id/faceCountLayout">
+
+        <TextView
+            android:id="@+id/textview_facecount"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:text="Faces 0"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+</RelativeLayout>

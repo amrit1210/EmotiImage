@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/topLayout"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true">
+
+    <com.google.android.gms.samples.vision.face.facetracker.ui.camera.CameraSourcePreview
+        android:id="@+id/preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.gms.samples.vision.face.facetracker.ui.camera.GraphicOverlay
+            android:id="@+id/faceOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.google.android.gms.samples.vision.face.facetracker.ui.camera.CameraSourcePreview>
+
+    <ImageView
+        android:id="@+id/captureImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/quickcircle_camera_shutter_normal"
+        />
+
+    <ImageView
+        android:id="@+id/gallery"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/camera_icon_mode_basic"
+        />
+
+    <ImageView
+        android:id="@+id/backpress"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:src="@drawable/ic_sysbar_back_dark_normal"
+        />
+
+    <ImageView
+        android:id="@+id/switchCamera"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:paddingTop="5dp"
+        android:paddingLeft="15dp"
+        android:src="@drawable/ic_switch_camera_white_24dp"
+        android:layout_alignBottom="@+id/gallery" />
+
+    <ImageView
+        android:id="@+id/groupSuggestion"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginLeft="400dp"
+        android:src="@drawable/btn_dualview_wide_range_front"
+        android:layout_alignBottom="@+id/gallery" />
+
+    <LinearLayout
+        android:layout_width="420dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:gravity="bottom"
+        android:layout_alignBottom="@+id/backpress"
+        android:orientation="vertical">
+        <include layout="@layout/select_mood" />
+
+        <TextView
+            android:id="@+id/selected_mood"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:background="@drawable/border"/>
+
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/simpleSpinner"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_alignParentLeft="true"
+        android:prompt="@string/mood"
+        android:spinnerMode="dialog"
+        android:visibility="invisible"
+        android:paddingTop="10dp" />
+
+    <ImageView
+        android:id="@+id/auto"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginRight="10dp"
+        android:visibility="visible"
+        android:src="@drawable/btn_manual_panel_button_auto"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="80dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:id="@+id/faceCountLayout">
+
+        <TextView
+            android:id="@+id/textview_facecount"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:text="Faces 0"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+</RelativeLayout>
